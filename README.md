@@ -27,4 +27,4 @@ app.use((req, res) => {
 app.listen(3131);
 ```
 
-If this site is running at myurl.com:3131 you can set the forward url in your plasso account to `myurl.com:3131/protected`.  If the user is not logged in they will be redirected to the root url `myurl.com:3131/`.  If they are logged in then they log out the go yo your configured Logout Url.
+If this site is running at `myurl.com:3131` you can set the forward url in your plasso account to `myurl.com:3131/protected`.  If the user is not logged in they will be redirected to the root url `myurl.com:3131/`.  If they are logged in then they log out the go to your configured Logout Url.
