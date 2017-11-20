@@ -128,11 +128,11 @@ Plasso.prototype.getMiddleware = function() {
 
     plasso.loadFromRequest(req);
 
-    if (parsedUrl.query._plasso_token) {
-      plasso.token = parsedUrl.query._plasso_token;
+    if (parsedUrl.query.__plasso_token) {
+      plasso.token = parsedUrl.query.__plasso_token;
     }
 
-    if (parsedUrl.query.__logout != null || parsedUrl.query._plasso_token == 'logout') {
+    if (parsedUrl.query.__logout != null || parsedUrl.query.__plasso_token == 'logout') {
       clearCookie(res, '/');
       redirect(res, plasso.space ? plasso.space.logoutUrl : logoutUrl);
       return;
