@@ -31,10 +31,10 @@ function sendRequest(method, path, request, cb) {
   jsonRequest = JSON.stringify(request);
 
   const req = http.request({
-    host: 'localhost',
+    host: 'plasso.com',
     path: path,
-    protocol: 'http:',
-    port: 8080,
+    protocol: 'https:',
+    port: 80,
     method: method,
     headers: {
       'Content-Type': 'application/json',
