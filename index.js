@@ -1,7 +1,5 @@
- var flexkit = require("./flexkit");
- var billing = require("./billing");
+var plasso = require("./plasso");
 
 module.exports = {
-  flexkit: flexkit,
-  billing: billing
+  plasso: plasso
 }
