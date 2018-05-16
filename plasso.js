@@ -1,7 +1,7 @@
 const https = require('https');
 const url = require('url');
 
-function parseCookies (req) {
+function parseCookies(req) {
   const list = {};
   const rc = req.headers.cookie;
 
@@ -40,6 +40,8 @@ function redirect(res, location) {
 function Plasso(options) {
   this.token = options ? options.token : undefined;
 }
+
+Plasso.prototype.memberData = null;
 
 Plasso.prototype.deserialize = function(data) {
   const props = JSON.parse(data);
@@ -156,6 +158,8 @@ Plasso.prototype.authenticate = function(options, cb) {
         this.member = parsedData.data.member;
         this.space = parsedData.data.member.space;
 
+        Plasso.prototype.memberData = parsedData.data;
+
         cb(null);
       } catch (e) {
         cb(e);
@@ -171,7 +175,7 @@ Plasso.prototype.isAuthenticated = function(options, cb) {
   cb(true);
 }
 
-Plasso.prototype.getMiddleware = function() {
+Plasso.prototype.middleware = function() {
   var that = this;
   return function (req, res, next) {
     const parsedUrl = url.parse(req.url, true);

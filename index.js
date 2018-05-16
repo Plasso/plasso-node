@@ -1,5 +1,3 @@
 var plasso = require("./plasso");
 
-module.exports = {
-  plasso: plasso
-}
+module.exports = plasso;
