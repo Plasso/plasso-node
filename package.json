@@ -1,6 +1,6 @@
 {
   "name": "plasso",
-  "version": "2.0",
+  "version": "2.0.0",
   "description": "Plasso node library",
   "main": "index.js",
   "scripts": {
